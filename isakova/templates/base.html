@@ -7,63 +7,151 @@
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
 <body>
-    <div class="header">
-        <nav class="navbar container space-between">
-            <!-- <div class="logo">
-                <a href="/">Светлана Исакова</a>
-            </div> -->
-            <div class="navbar-links"> 
-                <a class="navbar-item" href="/">Главная</a>
-                <a class="navbar-item" href="/about-me">Про меня</a>
-                <a class="navbar-item" href="/services">Услуги</a>
-                <a class="navbar-item" href="/documents">Документы</a>
+    <header class="header dark">
+        <div class="container flex space-between align-center">
+            <ul class="header__nav flex">
+                <li class="nav__item hover">
+                    <a class="scrollTo" href="/">Главная</a>
+                </li>
+                <li class="nav__item hover">
+                    <a class="scrollTo" href="/about-me">Обо мне</a>
+                </li>
+                <li class="nav__item hover">
+                    <a class="scrollTo" href="/services">Услуги</a>
+                </li>
+                <li class="nav__item hover">
+                    <a class="scrollTo" href="/documents">Сертификат</a>
+                </li>
+            </ul>
+            <a href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19" target="_blank" class="header__location hover">
+            <img src="static/image/location.png" alt="" loading="lazy">
+            Кострома, проспект Текстильщиков 40/39</a>
 
+            <div class="header__socials">
+            <a href="https://vk.ru/svetlana_isakova_psyholog" target="_blank" class="header__social hover">
+                <img src="static/image/vk.png" alt="" loading="lazy">
+            </a>
+            <a href="https://max.ru/u/f9LHodD0cOKC64sJtwSsgzALVOIC9Lo_Mx9Kk5o0J4McEv7yk9jXiHFg9W0" target="_blank" class="header__social hover">
+                <img src="static/image/max.png" alt="" loading="lazy">
+            </a>
+            <a href="https://t.me/Svetlana_Isakova29" target="_blank" class="header__social hover">
+                <img src="static/image/tg.png" alt="" loading="lazy">
+            </a>
             </div>
-        </nav>
-    </div>
+            <a href="tel:+79502424457" class="header__phone hover">+7 (950) 242-44-57</a>
+            <!-- <button
+            aria-label="#signup"
+            class="button blue header__button mobile scrollTo"
+            >
+            Записаться
+            </button> -->
+            <div class="header__socials special">
+            <a href="https://vk.ru/svetlana_isakova_psyholog" target="_blank" class="header__social hover">
+                <img src="static/image/vk.png" alt="" loading="lazy">
+            </a>
+            <a href="https://max.ru/u/f9LHodD0cOKC64sJtwSsgzALVOIC9Lo_Mx9Kk5o0J4McEv7yk9jXiHFg9W0" target="_blank" class="header__social hover">
+                <img src="static/image/max.png" alt="" loading="lazy">
+            </a>
+            <a href="https://t.me/Svetlana_Isakova29" target="_blank" class="header__social hover">
+                <img src="static/image/tg.png" alt="" loading="lazy">
+            </a>
+            </div>
+            <button class="header__mob hover">
+            <img src="static/image/menu_mob.png" alt="" loading="lazy">
+            </button>
+        </div>
+        <div class="header__mobile-block container">
+            <a href="https://yandex.ru/maps/-/CHq55AYw" target="_blank" class="header__location special hover">
+            <img src="static/image/location.png" alt="" loading="lazy">
+            Москва, Мясницкая 46, стр 1
+            </a>
+        </div>
+    </header>
     {% block content %}{% endblock %}
+
+    <div class="sidebar">
+        <div class="sidebar__underlay"></div>
+        <div class="sidebar__side">
+            <button class="sidebar__close hover">
+                <img src="static/image/close.png" class="closeIcon" alt="" loading="lazy">
+            </button>
+            <ul class="sidebar__menu">
+                <li class="sidebar__item hover">
+                    <a class="scrollTo" href="/">Главная</a>
+                </li>
+                <li class="sidebar__item hover">
+                    <a class="scrollTo" href="/about-me">Обо мне</a>
+                </li>
+                <li class="sidebar__item hover">
+                    <a class="scrollTo" href="/services">Услуги</a>
+                </li>
+                <li class="sidebar__item hover">
+                    <a class="scrollTo" href="/documents">Сертификат</a>
+                </li>
+            </ul>
+
+            <a href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19" target="_blank" class="sidebar__address hover">
+            <img src="static/image/location.png" alt="" loading="lazy">
+            Кострома, проспект Текстильщиков 40/39
+            </a>
+
+            <div class="sidebar__socials">
+                <a href="https://vk.ru/svetlana_isakova_psyholog" target="_blank" class="sidebar__social hover">
+                    <img src="static/image/vk.png" alt="" loading="lazy">
+                </a>
+                <a href="https://max.ru/u/f9LHodD0cOKC64sJtwSsgzALVOIC9Lo_Mx9Kk5o0J4McEv7yk9jXiHFg9W0" target="_blank" class="sidebar__social hover">
+                    <img src="static/image/max.png" alt="" loading="lazy">
+                </a>
+                <a href="https://t.me/Svetlana_Isakova29" target="_blank" class="sidebar__social hover">
+                    <img src="static/image/tg.png" alt="" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer dark">
         <div class="container withPadding">
         <div class="box footer__info">
-        <p class="footer__occupation">Семейный психолог</p>
-        <p class="footer__name">Ольга Латынцева</p>
+        <p class="footer__occupation">Психолог</p>
+        <p class="footer__name">Светлана Исакова</p>
         </div>
         <div class="box">
         <div class="footer__contacts flex">
             <div class="footer__phone">
-            <img src="./Семейный Психолог в Москве - Ольга Латынцева_files/phone.png" alt="" loading="lazy">
-            <a class="hover" href="tel:+79062389933">+7 (906) 238 9933</a>
+             <img src="static/image/phone.png" alt="" loading="lazy">
+            <a class="hover" href="tel:+79502424457">+7 (950) 242-44-57</a>
             </div>
             <div class="footer__address">
-            <img src="./Семейный Психолог в Москве - Ольга Латынцева_files/location.png" alt="" loading="lazy">
-            <a class="hover" target="_blank" href="https://yandex.ru/maps/-/CHq55AYw">Москва, ул. Мясницкая 46, стр 1</a>
+            <img src="static/image/location.png" alt="" loading="lazy">
+            <a class="hover" target="_blank" href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19">Кострома, проспект Текстильщиков 40/39</a>
             </div>
         </div>
         <div class="footer__copyright">
-            <span id="year">2026</span> © Психолог Ольга Латынцева. Все права защищены
+            <span id="year">2026</span> © Психолог Светлана Исакова. Все права защищены
         </div>
         <div class="footer__copyright">
             <br>
-            <a href="https://olgalatynceva.ru/">Семейный психолог в Москве
+            <a href="https://olgalatynceva.ru/">-----
             </a></div>
         
         <div class="footer__copyright">
             <br>
-        ОГРНИП: 317392600045247, ИНН: 390901593665, ИП Лобарева Ольга Анатольевна
+        ОГРНИП: , ИНН: , ИП 
         </div>
         
-        <div class="footer__copyright">
+        <!-- <div class="footer__copyright">
             <br>
-            <!--noindex--><a href="https://olgalatynceva.ru/files/offer.pdf" target="_blank" rel="nofollow">Договор оферты</a><!--/noindex-->,
-            <!--noindex--><a href="https://olgalatynceva.ru/files/cookie.pdf" target="_blank" rel="nofollow">Политика в отношении Cookie</a><!--/noindex-->,
-            <!--noindex--><a href="https://olgalatynceva.ru/files/personal.pdf" target="_blank" rel="nofollow">Обработка персональных данных</a><!--/noindex-->,
-            <!--noindex--><a href="https://olgalatynceva.ru/files/metrika.pdf" target="_blank" rel="nofollow">Обработка данных с помощью сервиса «ЯНДЕКС.МЕТРИКА»</a><!--/noindex-->
-        </div>
+            noindex<a href="https://olgalatynceva.ru/files/offer.pdf" target="_blank" rel="nofollow">Договор оферты</a>/noindex,
+            noindex<a href="https://olgalatynceva.ru/files/cookie.pdf" target="_blank" rel="nofollow">Политика в отношении Cookie</a>/noindex,
+            noindex<a href="https://olgalatynceva.ru/files/personal.pdf" target="_blank" rel="nofollow">Обработка персональных данных</a>/noindex,
+            noindex<a href="https://olgalatynceva.ru/files/metrika.pdf" target="_blank" rel="nofollow">Обработка данных с помощью сервиса «ЯНДЕКС.МЕТРИКА»</a>/noindex
+        </div>-->
         
         
             </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="static/js/main.js"></script>
 </body>
 </html>
