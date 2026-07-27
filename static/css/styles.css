@@ -681,6 +681,8 @@ button {
   position: relative;
   overflow: hidden;
   z-index: 2;
+  display: flex;
+  flex: 1;
 }
 
 @media (width >= 900px) {
@@ -734,6 +736,15 @@ button {
   border-radius: 8px;
   padding: 32px 16px;
   position: relative;
+}
+
+.about__paper_second {
+  z-index: 10;
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px 16px;
+  position: relative;
+  display: flex;
 }
 
 .about__paper.text {
@@ -806,6 +817,7 @@ button {
   align-items: center;
   gap: 24px;
   display: flex;
+  margin-bottom: 35px;
 }
 
 @media (width >= 900px) {
