@@ -677,7 +677,6 @@ button {
 }
 
 .about {
-  background: var(--black-100);
   padding: 30px 0 40px;
   position: relative;
   overflow: hidden;
@@ -729,7 +728,7 @@ button {
   width: 100%;
   max-width: 360px;
   position: relative;
-  border-radius: 8px;
+  border-radius: 12px 0px 0px 0px;
 }
 
 .about__paper {
@@ -758,7 +757,6 @@ button {
   gap: 24px;
   display: flex;
   z-index: 10;
-  background: #fff;
   border-radius: 8px;
   padding: 32px 16px;
   position: relative
@@ -785,6 +783,8 @@ button {
     padding: 56px 48px;
     font-size: 19px;
     line-height: 1.25;
+    background-color: #ffff;
+    color: black;
   }
 }
 
@@ -852,7 +852,6 @@ button {
 .about__blocks {
   flex-direction: column;
   align-items: center;
-  gap: 24px;
   display: flex;
   margin-bottom: 35px;
 }
@@ -863,7 +862,6 @@ button {
                    "join join"
                    / 360px auto;
     align-items: stretch;
-    gap: 24px;
     display: grid;
   }
 }
@@ -2611,4 +2609,12 @@ button {
     .service-card li {
         font-size: 17px;
     }
+}
+
+.border1 {
+  border-radius: 0px 12px 0px 0px;
+}
+
+.border2 {
+  border-radius: 0px 0px 12px 12px;
 }
