@@ -85,6 +85,14 @@ button {
   padding: unset;
 }
 
+.home_text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   width: 100%;
   max-width: 1320px;
@@ -611,7 +619,7 @@ button {
   .banner__button.desktop {
     max-width: 373px;
     margin-top: 88px;
-    display: inline-block;
+    display: flex;
   }
 }
 
@@ -2479,13 +2487,28 @@ button {
 }
 
 .services {
-    min-height: 100vh;
+    min-height: calc(100vh - 140px);
     padding: 50px 40px 70px;
+    background-image: url(../image/services.png);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.services-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .services-header {
     text-align: center;
     margin-bottom: 64px;
+    position: relative;
 }
 
 .services-header h1 {
@@ -2505,19 +2528,20 @@ button {
 .services-container {
     max-width: 1530px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 25px;
+    position: relative;
 }
 
 .service-card {
     background: #ffffff;
     color: #1e1e1e;
     min-height: 553px;
-    border-radius: 27px 27px 0 27px;
+    border-radius: 27px 27px 27px 27px;
     padding: 38px 48px 64px;
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .service-card h2 {
@@ -2561,8 +2585,12 @@ button {
 }
 
 @media (max-width: 1000px) {
+    .services {
+      justify-content: center;
+    }
+
     .services-container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         max-width: 600px;
     }
 
@@ -2617,4 +2645,7 @@ button {
 
 .border2 {
   border-radius: 0px 0px 12px 12px;
+}
+.services-image {
+  position: absolute;
 }
