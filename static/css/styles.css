@@ -136,7 +136,7 @@ button {
   overflow: hidden;
 }
 
-.button:after {
+/* .button:after {
   content: "";
   filter: blur(30px);
   background: #ffffffb3;
@@ -146,7 +146,7 @@ button {
   position: absolute;
   top: 67px;
   left: 0;
-}
+} */
 
 .button.blue {
   background: var(--blue-500);
@@ -211,6 +211,7 @@ button {
   align-items: center;
   padding-top: 0;
   display: flex;
+  background-color: #eeeae4;
 }
 
 @media (width >= 900px) {
@@ -218,6 +219,7 @@ button {
     justify-content: center;
     padding-top: 24px;
     padding-bottom: 30px;
+    background-color: #eeeae4;
   }
 }
 
@@ -229,14 +231,15 @@ button {
 @media (width >= 900px) {
   .header .container {
     backdrop-filter: blur(70px);
-    background: linear-gradient(221deg, #ffffff0d 0% 100%);
+    background: linear-gradient(221deg, #fffefe0d 0% 100%);
     border: 1px solid #fff3;
     border-radius: 8px;
     max-width: 1288px;
     margin-left: 16px;
     margin-right: 16px;
     padding: 30px;
-    box-shadow: inset -20px 3px 36px #ffffff0d;
+    box-shadow: inset 0px 0px 36px #1616161a;
+    background-color: white;
   }
 
   .header .container.mentoring {
@@ -389,7 +392,6 @@ button {
 }
 
 .header__mobile-block {
-  border-top: 2px solid #fff;
   justify-content: center;
   display: flex;
 }
@@ -403,6 +405,7 @@ button {
 .footer {
   margin-top: auto;
   width: 100%; 
+  background-color: #eeeae4;
 }
 
 .footer .container {
@@ -500,9 +503,10 @@ button {
 .banner {
   margin-top: -1px;
   padding-top: 50px;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
   position: relative;
   overflow: hidden;
+  background-color: #eeeae4;
 }
 
 @media only screen and (width <= 850px) {
@@ -602,7 +606,7 @@ button {
 
 .banner__button.mobile {
   margin-top: 0;
-  display: inline-block;
+  display: flex;
 }
 
 @media (width >= 900px) {
@@ -638,12 +642,13 @@ button {
 
 .banner .fact {
   backdrop-filter: blur(70px);
-  background: linear-gradient(221deg, #ffffff0d 0% 100%);
+  background: linear-gradient(32deg, #ffffff0d 0% 100%);
   border-radius: 8px;
   flex-grow: 1;
   flex-basis: 0;
   padding: 32px;
-  box-shadow: inset -20px 3px 36px #ffffff0d;
+  box-shadow: inset -1px 5px 36px 0px #3e3a3a3d;
+  background-color: white;
 }
 
 @media (width >= 900px) {
@@ -2486,7 +2491,7 @@ button {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
+    background-color: #eeeae4;
 }
 
 .services-content {
