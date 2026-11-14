@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
+  const images = document.querySelectorAll('.list-element img');
+  if (!images.length) return;
+
   // Создаём контейнер для лайтбокса
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
   lightbox.innerHTML = `
     <span class="close-btn">&times;</span>
-    <img src="" alt="Увеличенное изображение">
+    <img alt="Увеличенное изображение">
   `;
   document.body.appendChild(lightbox);
 
@@ -12,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeBtn = lightbox.querySelector('.close-btn');
 
   // Открытие по клику на любое изображение внутри .list-element
-  document.querySelectorAll('.list-element img').forEach(img => {
+  images.forEach(img => {
     img.addEventListener('click', function (e) {
       e.stopPropagation();
       lightboxImg.src = this.src;

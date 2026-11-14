@@ -1,41 +1,45 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="static/css/styles.css">
+    <title>{% block title %}Психолог Светлана Исакова{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=20261114-layout-16">
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
+    <a class="skip-link" href="#main-content">Перейти к содержимому</a>
     <header class="header">
         <div class="container flex space-between align-center">
-            <ul class="header__nav flex">
+            <nav class="header__nav" aria-label="Основная навигация">
+            <ul class="flex">
                 <li class="nav__item hover">
-                    <a class="scrollTo" href="/">Главная</a>
+                    <a href="/"{% if request.path == "/" %} aria-current="page"{% endif %}>Главная</a>
                 </li>
                 <li class="nav__item hover">
-                    <a class="scrollTo" href="/about-me">Обо мне</a>
+                    <a href="/about-me"{% if request.path == "/about-me" %} aria-current="page"{% endif %}>Обо мне</a>
                 </li>
                 <li class="nav__item hover">
-                    <a class="scrollTo" href="/services">Услуги</a>
+                    <a href="/services"{% if request.path == "/services" %} aria-current="page"{% endif %}>Услуги</a>
                 </li>
                 <!-- <li class="nav__item hover">
                     <a class="scrollTo" href="/documents">Сертификаты</a>
                 </li> -->
             </ul>
-            <a href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19" target="_blank" class="header__location hover">
-            <img src="static/image/location.png" alt="" loading="lazy">
+            </nav>
+            <a href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19" target="_blank" rel="noopener noreferrer" class="header__location hover">
+            <img src="{% static 'image/location.png' %}" alt="" loading="lazy">
             Кострома, проспект Текстильщиков 40/39</a>
 
             <div class="header__socials">
-            <a href="https://vk.ru/svetlana_isakova_psyholog" target="_blank" class="header__social hover">
-                <img src="static/image/vk.png" alt="" loading="lazy">
+            <a href="https://vk.ru/svetlana_isakova_psyholog" target="_blank" rel="noopener noreferrer" class="header__social hover">
+                <img src="{% static 'image/vk.png' %}" alt="ВКонтакте" loading="lazy">
             </a>
-            <a href="https://max.ru/u/f9LHodD0cOKC64sJtwSsgzALVOIC9Lo_Mx9Kk5o0J4McEv7yk9jXiHFg9W0" target="_blank" class="header__social hover">
-                <img src="static/image/max.png" alt="" loading="lazy">
+            <a href="https://max.ru/u/f9LHodD0cOKC64sJtwSsgzALVOIC9Lo_Mx9Kk5o0J4McEv7yk9jXiHFg9W0" target="_blank" rel="noopener noreferrer" class="header__social hover">
+                <img src="{% static 'image/max.png' %}" alt="MAX" loading="lazy">
             </a>
-            <a href="https://t.me/Svetlana_Isakova29" target="_blank" class="header__social hover">
-                <img src="static/image/tg.png" alt="" loading="lazy">
+            <a href="https://t.me/Svetlana_Isakova29" target="_blank" rel="noopener noreferrer" class="header__social hover">
+                <img src="{% static 'image/tg.png' %}" alt="Telegram" loading="lazy">
             </a>
             </div>
             <a href="tel:+79502424457" class="header__phone hover">+7 (950) 242-44-57</a>
@@ -46,64 +50,66 @@
             Записаться
             </button> -->
             <div class="header__socials special">
-            <a href="https://vk.ru/svetlana_isakova_psyholog" target="_blank" class="header__social hover">
-                <img src="static/image/vk.png" alt="" loading="lazy">
+            <a href="https://vk.ru/svetlana_isakova_psyholog" target="_blank" rel="noopener noreferrer" class="header__social hover">
+                <img src="{% static 'image/vk.png' %}" alt="ВКонтакте" loading="lazy">
             </a>
-            <a href="https://max.ru/u/f9LHodD0cOKC64sJtwSsgzALVOIC9Lo_Mx9Kk5o0J4McEv7yk9jXiHFg9W0" target="_blank" class="header__social hover">
-                <img src="static/image/max.png" alt="" loading="lazy">
+            <a href="https://max.ru/u/f9LHodD0cOKC64sJtwSsgzALVOIC9Lo_Mx9Kk5o0J4McEv7yk9jXiHFg9W0" target="_blank" rel="noopener noreferrer" class="header__social hover">
+                <img src="{% static 'image/max.png' %}" alt="MAX" loading="lazy">
             </a>
-            <a href="https://t.me/Svetlana_Isakova29" target="_blank" class="header__social hover">
-                <img src="static/image/tg.png" alt="" loading="lazy">
+            <a href="https://t.me/Svetlana_Isakova29" target="_blank" rel="noopener noreferrer" class="header__social hover">
+                <img src="{% static 'image/tg.png' %}" alt="Telegram" loading="lazy">
             </a>
             </div>
-            <button class="header__mob hover">
-            <img src="static/image/menu_mob.png" alt="" loading="lazy">
+            <button class="header__mob hover" type="button" aria-label="Открыть меню" aria-controls="mobile-menu" aria-expanded="false">
+            <img src="{% static 'image/menu_mob.png' %}" alt="" loading="lazy">
             </button>
-        </div>
         <div class="header__mobile-block container">
-            <a href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19" target="_blank" class="header__location special hover">
-            <img src="static/image/location.png" alt="" loading="lazy">
+            <a href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19" target="_blank" rel="noopener noreferrer" class="header__location special hover">
+            <img src="{% static 'image/location.png' %}" alt="" loading="lazy">
             Кострома, проспект Текстильщиков 40/39
             </a>
         </div>
+        </div>
     </header>
+    <main id="main-content">
     {% block content %}{% endblock %}
+    </main>
 
-    <div class="sidebar">
+    <div class="sidebar" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Меню сайта" hidden>
         <div class="sidebar__underlay"></div>
-        <div class="sidebar__side">
-            <button class="sidebar__close hover">
-                <img src="static/image/close.png" class="closeIcon" alt="" loading="lazy">
+        <div class="sidebar__side" tabindex="-1">
+            <button class="sidebar__close hover" type="button" aria-label="Закрыть меню">
+                <img src="{% static 'image/close.png' %}" class="closeIcon" alt="" loading="lazy">
             </button>
-            <ul class="sidebar__menu">
+            <ul class="sidebar__menu" aria-label="Мобильная навигация">
                 <li class="sidebar__item hover">
-                    <a class="scrollTo" href="/">Главная</a>
+                    <a href="/"{% if request.path == "/" %} aria-current="page"{% endif %}>Главная</a>
                 </li>
                 <li class="sidebar__item hover">
-                    <a class="scrollTo" href="/about-me">Обо мне</a>
+                    <a href="/about-me"{% if request.path == "/about-me" %} aria-current="page"{% endif %}>Обо мне</a>
                 </li>
                 <li class="sidebar__item hover">
-                    <a class="scrollTo" href="/services">Услуги</a>
+                    <a href="/services"{% if request.path == "/services" %} aria-current="page"{% endif %}>Услуги</a>
                 </li>
                 <!-- <li class="sidebar__item hover">
                     <a class="scrollTo" href="/documents">Сертификаты</a>
                 </li> -->
             </ul>
 
-            <a href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19" target="_blank" class="sidebar__address hover">
-            <img src="static/image/location.png" alt="" loading="lazy">
+            <a href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19" target="_blank" rel="noopener noreferrer" class="sidebar__address hover">
+            <img src="{% static 'image/location.png' %}" alt="" loading="lazy">
             Кострома, проспект Текстильщиков 40/39
             </a>
 
             <div class="sidebar__socials">
-                <a href="https://vk.ru/svetlana_isakova_psyholog" target="_blank" class="sidebar__social hover">
-                    <img src="static/image/vk.png" alt="" loading="lazy">
+                <a href="https://vk.ru/svetlana_isakova_psyholog" target="_blank" rel="noopener noreferrer" class="sidebar__social hover">
+                    <img src="{% static 'image/vk.png' %}" alt="ВКонтакте" loading="lazy">
                 </a>
-                <a href="https://max.ru/u/f9LHodD0cOKC64sJtwSsgzALVOIC9Lo_Mx9Kk5o0J4McEv7yk9jXiHFg9W0" target="_blank" class="sidebar__social hover">
-                    <img src="static/image/max.png" alt="" loading="lazy">
+                <a href="https://max.ru/u/f9LHodD0cOKC64sJtwSsgzALVOIC9Lo_Mx9Kk5o0J4McEv7yk9jXiHFg9W0" target="_blank" rel="noopener noreferrer" class="sidebar__social hover">
+                    <img src="{% static 'image/max.png' %}" alt="MAX" loading="lazy">
                 </a>
-                <a href="https://t.me/Svetlana_Isakova29" target="_blank" class="sidebar__social hover">
-                    <img src="static/image/tg.png" alt="" loading="lazy">
+                <a href="https://t.me/Svetlana_Isakova29" target="_blank" rel="noopener noreferrer" class="sidebar__social hover">
+                    <img src="{% static 'image/tg.png' %}" alt="Telegram" loading="lazy">
                 </a>
             </div>
         </div>
@@ -118,12 +124,12 @@
     <div class="box">
     <div class="footer__contacts flex">
         <div class="footer__phone">
-            <img src="static/image/phone.png" alt="" loading="lazy">
+            <img src="{% static 'image/phone.png' %}" alt="" loading="lazy">
         <a class="hover" href="tel:+79502424457">+7 (950) 242-44-57</a>
         </div>
         <div class="footer__address">
-        <img src="static/image/location.png" alt="" loading="lazy">
-        <a class="hover" target="_blank" href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19">Кострома, проспект Текстильщиков 40/39</a>
+        <img src="{% static 'image/location.png' %}" alt="" loading="lazy">
+        <a class="hover" target="_blank" rel="noopener noreferrer" href="https://yandex.ru/maps/7/kostroma/house/prospekt_tekstilshchikov_40_39/YEkYfwZoQEYCQFttfXt2c3RrYg==/?ll=40.918935%2C57.772886&z=17.19">Кострома, проспект Текстильщиков 40/39</a>
         </div>
     </div>
     <div class="footer__copyright">
@@ -131,26 +137,15 @@
     </div>
     <div class="footer__copyright">
         <br>
-        <a href="https://olgalatynceva.ru/">-----
-        </a></div>
-    
-    <div class="footer__copyright">
-        <br>
-    ОГРНИП: , ИНН: , ИП 
-    </div>
-    
-    <div class="footer__copyright">
-        <br>
-        <!--noindex--><a href="static/image/oferta.pdf" target="_blank" rel="nofollow">Договор оферты</a><!--/noindex-->,
-        <!--noindex--><a href="static/image/cookie.pdf" target="_blank" rel="nofollow">Политика конфиденциальности</a><!--/noindex-->
+        <!--noindex--><a href="{% static 'image/oferta.pdf' %}" target="_blank" rel="noopener noreferrer nofollow">Договор оферты</a><!--/noindex-->,
+        <!--noindex--><a href="{% static 'image/polkonf.pdf' %}" target="_blank" rel="noopener noreferrer nofollow">Политика конфиденциальности</a><!--/noindex-->
     </div>
     
     
         </div>
     </div>
 </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="static/js/main.js"></script>
-    <script src="static/js/lightbox.js"></script>
+    <script src="{% static 'js/main.js' %}?v=20261101-shared-layout" defer></script>
+    <script src="{% static 'js/lightbox.js' %}" defer></script>
 </body>
 </html>

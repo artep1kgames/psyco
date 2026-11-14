@@ -1,22 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}{% endblock %}
+{% block title %}Услуги — психолог Светлана Исакова{% endblock %}
 
 {% block content %}
 
-<div class="services">
-    <div class="services-content">
-        <div class="services-header">
-                <h1>Услуги</h1>
-
-                <p>
-                    Explore our most popular partnership packages designed to<br>
-                    help property owners achieve effortless, profitable returns
-                </p>
-        </div>
+<section class="services" aria-labelledby="services-title">
+    <div class="services-header container withPadding">
+        <h1 id="services-title">Услуги</h1>
+    </div>
+    <div class="services-layout container withPadding">
+      <figure class="services-portrait portrait-visual">
+        <picture class="portrait-visual__picture">
+          <source media="(max-width: 767px)" srcset="{% static 'image/services-mobile.PNG' %}" width="960" height="1200">
+          <img class="portrait-visual__photo" src="{% static 'image/services-mobile.PNG' %}" width="960" height="1200" alt="" fetchpriority="high">
+        </picture>
+      </figure>
+      <div class="services-content">
         <div class="services-container">
 
-            <div class="service-card">
+            <article class="service-card">
                 <h2>Сложные эмоциональные состояния</h2>
                 <ul>
                     <li>Работа с травматическим опытом и ПТСР</li>
@@ -30,9 +33,9 @@
                     <li>Поиск идентичности и работа с кризисом «Кто я?»</li>
                     <li>Кризисы и сложные жизненные решения</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="service-card">
+            <article class="service-card">
                 <h2>Проблемы в отношениях и коммуникации</h2>
                 <ul>
                     <li>Сложности в отношениях — партнерские, семейные, рабочие</li>
@@ -42,9 +45,9 @@
                     <li>Работа с одиночеством и построением социальных связей</li>
                     <li>Развитие эмоционального интеллекта (EQ)</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="service-card">
+            <article class="service-card">
                 <h2>Профессиональная самореализация и коучинг</h2>
 
                 <ul>
@@ -57,8 +60,9 @@
                     <li>Тайм-менеджмент и продуктивность</li>
                     <li>Профессиональное выгорание</li>
                 </ul>
-            </div>
+            </article>
         </div>
+      </div>
     </div>
-</div>
+</section>
 {% endblock %}

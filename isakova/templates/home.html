@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}{% endblock %}
+{% block body_class %}home-page{% endblock %}
+
+
+{% block title %}Психолог Светлана Исакова — Кострома{% endblock %}
 
 {% block content %}
 <div class="banner wrapper">
@@ -14,19 +18,13 @@
         </h1>
 <!--        <h2 class="banner__prof">Психолог</h2>-->
 <!--        <h1 class="banner__name">Светлана Исакова</h1>-->
-        <div class="button blue banner__button desktop popup-init">
-          <a href="/services" class="home_text">Подробнее</a>
-        </div>
+        <a href="https://www.b17.ru/svetlana_isakova/" class="button blue banner__button desktop">Моя страница b17</a>
       </div>
       <picture>
-        <source media="(max-width: 799px)" srcset="static/image/banner2.png">
-        <source media="(min-width: 900px)" srcset="static/image/banner1.png">
-        <img class="banner__img" src="" alt="static/image/banner1.png">
+        <source media="(max-width: 599px)" srcset="{% static 'image/banner2.PNG' %}">
+        <img class="banner__img" src="{% static 'image/banner1.PNG' %}" width="1321" height="880" alt="Психолог Светлана Исакова" fetchpriority="high">
       </picture>
-      <div class="button blue banner__button mobile popup-init">
-        <a href="/services" class="home_text">Услуги
-        </a>
-      </div>
+      <a href="https://www.b17.ru/svetlana_isakova/" class="button blue banner__button mobile">Моя страница B17</a>
     </div>
 
     <div class="banner__facts">
@@ -42,9 +40,7 @@
         <span class="fact__title">Более 500</span>
         <p class="fact__text">Достигнутых целей по бизнес-коучингу</p>
       </div>
-      <div class="">
-        <a href="" class></a>
-      </div>
+
     </div>
   </div>
 </div>
