@@ -3102,3 +3102,60 @@ body:has(.services) main { display: flex; flex-direction: column; }
     animation: none !important;
   }
 }
+
+/*
+  Desktop scroll behavior:
+  The desktop artwork is attached to the portrait itself, not to the page section.
+  This keeps the photo and its background moving as one sticky composition.
+*/
+@media (min-width: 768px) {
+  .about,
+  .services {
+    background-color: #eeeae4;
+    background-image: none;
+  }
+
+  .about__portrait,
+  .services-portrait {
+    position: sticky;
+    top: 24px;
+    bottom: auto;
+    align-self: start;
+    overflow: visible;
+    isolation: isolate;
+  }
+
+  .about__portrait::before,
+  .services-portrait::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    background-image:
+      linear-gradient(to bottom, #eeeae4 0, #eeeae400 180px),
+      url("../image/portrait-background-desktop.PNG");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 100%, 100% auto;
+    background-position: left top, left bottom;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 1751px) {
+  .about__portrait,
+  .services-portrait {
+    top: auto;
+    bottom: 0;
+    align-self: end;
+  }
+
+  .about__portrait::before,
+  .services-portrait::before {
+    top: 0;
+    bottom: 0;
+  }
+}
